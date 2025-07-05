@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeatHause.id</title>
+ 
+     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+    
+     <!-- Feather Icons -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+
+ 
+      <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+ </head>
+<body>
+  <div class="page-container">
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">MeatHause.id</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="review.html">Review</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+    
+        <div class="cart-container" id="cartContainer">
+          <h3>Keranjang Belanja</h3>
+          <ul id="cartItems"></ul>
+          <p>Total: Rp <span id="cartTotal">0</span></p>
+          <button class="btn">Bayar</button>
+        </div>
+    
+        <div class="icons">
+          <a href="#" id="searchIcon"><i data-feather="search"></i></a>
+          <a href="#" id="cartIcon"><i data-feather="shopping-cart"></i></a>
+          <div class="user-menu">
+            <a href="#" id="userIcon"><i data-feather="user"></i></a>
+            <div class="user-dropdown" id="userDropdown">
+              <a href="#">Pesanan Saya</a>
+              <a href="#">Status Pesanan</a>
+              <a href="#">Lacak Pesanan</a>
+              <a href="#">Wishlist</a>
+              <a href="#">Kelola Alamat</a>
+              <a href="#">Edit Profil</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+        </div> 
+        <div id="menu-bar" class="menu-bar">
+          <i data-feather="menu"></i>
+      </div>
+      </nav>
+    </header>
+
+  <main>
+    <section class="preview">
+      <h2>Semua Produk</h2>
+      <div class="product-list">
+        <div class="product-card" data-name="Daging Sapi Giling" data-price="55000" data-img="img/product/sapi-giling.jpg">
+          <img src="img/product/sapi-giling.jpg" alt="Daging Merah" class="product-image" />
+          <h3>Daging Sapi Giling (500 g)</h3>
+          <p>Daging sapi pilihan, giling halus siap masak.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Iga Sapi" data-price="48000" data-img="img/product/iga.jpg">
+          <img src="img/product/iga.jpg" alt="Daging Merah" class="product-image"/>
+          <h3>Iga Sapi (500 g)</h3>
+          <p>Iga sapi premium, empuk dan berbumbu lezat.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Daging Bebek Utuh" data-price="70000" data-img="img/product/bebek-utuh.jpg">
+          <img src="img/product/bebek-utuh.jpg" alt="Unggas"class="product-image" />
+          <h3>Daging Bebek Utuh</h3>
+          <p>Bebek utuh berkualitas, siap diolah.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Paha Ayam (500 g)" data-price="30000" data-img="img/product/paha-ayam.jpg">
+          <img src="img/product/paha-ayam.jpg" alt="Unggas" class="product-image"/>
+          <h3>Paha Ayam (500 g)</h3>
+          <p>Paha ayam segar, daging empuk pilihan.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Sayap Ayam" data-price="30000" data-img="img/product/sayap-ayam.jpg">
+          <img src="img/product/sayap-ayam.jpg" alt="Unggas" class="product-image"/>
+          <h3>Sayap Ayam (500 g)</h3>
+          <p>Sayap ayam gurih, cocok untuk sajian spesial.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Ikan Salmon" data-price="65000" data-img="img/product/salmon.jpg">
+          <img src="img/product/salmon.jpg" alt="Seafood" class="product-image"/>
+          <h3>Ikan Salmon (250 g)</h3>
+          <p>Fillet salmon segar, kaya nutrisi.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Udang" data-price="45000" data-img="img/product/udang.jpg">
+          <img src="img/product/udang.jpg" alt="Seafood" class="product-image"/>
+          <h3>Udang Segar (500 g)</h3>
+          <p>Udang segar berkualitas, siap masak.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Chikuwa" data-price="31000" data-img="img/product/frozen-food.jpg">
+          <img src="img/product/frozen-food.jpg" alt="Frozen Food" class="product-image"/>
+          <h3>Chikuwa (500 g)</h3>
+          <p>Olahan ikan pilihan, gurih dan kenyal.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Sosis Ayam" data-price="40000" data-img="img/product/sosis-ayam.jpg">
+          <img src="img/product/sosis-ayam.jpg" alt="Frozen Food" class="product-image"/>
+          <h3>Sosis Ayam (500 g)</h3>
+          <p>Sosis ayam pilihan, praktis dan nikmat.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+    
+        <div class="product-card" data-name="Sarden" data-price="15000" data-img="img/product/sarden.jpg">
+          <img src="img/product/sarden.jpg" alt="Siap Saji" class="product-image"/>
+          <h3>Sarden Kaleng (155 g)</h3>
+          <p>Ikan sarden pilihan berbalut saus cabai.</p>
+          <div class="card-icons">
+            <a href="#" class="cart-icon"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="wishlist-icon"><i data-feather="heart"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="popup-container" id="popupContainer">
+      <div class="popup-content">
+          <span class="close-popup" id="closePopup">&times;</span>
+          <img id="popupImage" src="" alt="Product Image">
+          <h3 id="popupName"></h3>
+          <p id="popupPrice"></p>
+          <div class="card-icons">
+            <a href="#" id="popupCart" class="add-to-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="popupWishlist" class="add-to-wishlist"><i data-feather="heart"></i></a>
+        </div>
+      </div>
+  </div>
+
+
+  </main>
+  <!-- Footer Start -->
+  <footer>
+    <div class="socials">
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="phone"></i></a>
+    </div>
+
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About Us</a>
+      <a href="review.html">Review</a>
+    </div>
+    
+
+    <div class="credit">
+        <p>Created by <a href="anadya-augustin"></a> |&copy; 2025</p>
+        <iframe src="https://maps.google.com/maps?q=Jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;"></iframe>
+    </div>
+ </footer>
+<!-- Footer End -->
+
+  <script src="js/script.js"></script>
+
+  <script>
+    feather.replace();
+
+    const productImages = document.querySelectorAll('.product-image');
+    const popupContainer = document.getElementById('popupContainer');
+    const popupImage = document.getElementById('popupImage');
+    const popupName = document.getElementById('popupName');
+    const popupPrice = document.getElementById('popupPrice');
+    const closePopup = document.getElementById('closePopup');
+
+    const popupCart = document.getElementById('popupCart');
+    const popupWishlist = document.getElementById('popupWishlist');
+
+    let currentProduct = {};
+
+    productImages.forEach(image => {
+        image.addEventListener('click', () => {
+            const productCard = image.parentElement;
+            const name = productCard.getAttribute('data-name');
+            const price = productCard.getAttribute('data-price');
+            const img = productCard.getAttribute('data-img');
+
+            popupImage.src = img;
+            popupName.textContent = name;
+            popupPrice.textContent = 'Harga: Rp ' + price;
+
+            currentProduct = { name, price, img };
+
+            popupContainer.style.display = 'flex';
+        });
+    });
+
+    closePopup.addEventListener('click', () => {
+        popupContainer.style.display = 'none';
+    });
+
+    popupContainer.addEventListener('click', (e) => {
+        if (e.target === popupContainer) {
+            popupContainer.style.display = 'none';
+        }
+    });
+
+    popupCart.addEventListener('click', () => {
+        alert(`${currentProduct.name} berhasil ditambahkan ke keranjang!`);
+        popupContainer.style.display = 'none';
+    });
+
+    popupWishlist.addEventListener('click', () => {
+        alert(`${currentProduct.name} berhasil ditambahkan ke wishlist!`);
+        popupContainer.style.display = 'none';
+    });
+</script>
+
+  </div>
+  
+</body>
+</html>

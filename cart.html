@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang Belanja</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h2>Keranjang Belanja</h2>
+
+  <!-- Daftar Item -->
+  <div id="cart-list"></div>
+
+  <!-- Total -->
+  <h3 id="cart-total">Total: Rp 0</h3>
+
+  <!-- Tombol Bayar -->
+  <button id="checkout-btn">Bayar</button>
+
+  <script>
+    // Ambil data dari localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartList = document.getElementById('cart-list');
+    const totalDisplay = document.getElementById('cart-total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    // Fungsi untuk memformat angka menjadi format Rupiah
+    function formatRupiah(angka) {
+      return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    // Render item ke dalam keranjang
+    function renderCart() {
+      cartList.innerHTML = '';
+      cart.forEach((item, index) => {
+        cartList.innerHTML += `
+          <div>
+            <input type="checkbox" class="cart-item" data-price="${item.price}" data-qty="${item.qty}">
+            ${item.name} - Rp ${formatRupiah(item.price)} x ${item.qty}
+          </div>
+        `;
+      });
+    }
+
+    // Hitung total dari item yang dipilih
+    function updateTotal() {
+      const selectedItems = document.querySelectorAll('.cart-item:checked');
+      let total = 0;
+
+      selectedItems.forEach(item => {
+        const price = parseInt(item.getAttribute('data-price'));
+        const qty = parseInt(item.getAttribute('data-qty'));
+        total += price * qty;
+      });
+
+      totalDisplay.innerText = 'Total: Rp ' + formatRupiah(total);
+    }
+
+    // Tampilkan isi keranjang
+    renderCart();
+
+    // Event untuk update total saat checkbox diubah
+    cartList.addEventListener('change', updateTotal);
+
+    // Event untuk proses pembayaran
+    checkoutBtn.addEventListener('click', () => {
+      const selectedItems = document.querySelectorAll('.cart-item:checked');
+
+      if (selectedItems.length === 0) {
+        alert('Silakan pilih produk yang ingin dibayar.');
+        return;
+      }
+
+      alert('Terima kasih atas pembelian Anda!');
+     
+    });
+  </script>
+</body>
+</html>
